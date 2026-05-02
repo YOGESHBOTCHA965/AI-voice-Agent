@@ -4,28 +4,28 @@ A comprehensive text-to-speech (TTS) pipeline for generating high-quality, long-
 
 ## Features
 
-- **Long-Form TTS Synthesis** — Generate natural-sounding audio for extended text using single-shot synthesis with intelligent fallback strategies
-- **Voice Cloning** — Clone voice characteristics from reference audio samples
-- **Robust Text Processing** — Automatic text cleaning and normalization
-- **Intelligent Segmentation** — Two-segment fallback strategy for handling long content
-- **Audio Quality Control** — Cross-fade joining for seamless multi-segment synthesis
-- **LoRA Fine-Tuning** — Fine-tune CSM-1B model on custom voice datasets (LJSpeech example included)
-- **Lightweight Demo Runner** — Easy-to-use Python CLI for quick synthesis
+- Long-Form TTS Synthesis - Generate natural-sounding audio for extended text using single-shot synthesis with intelligent fallback strategies
+- Voice Cloning - Clone voice characteristics from reference audio samples
+- Robust Text Processing - Automatic text cleaning and normalization
+- Intelligent Segmentation - Two-segment fallback strategy for handling long content
+- Audio Quality Control - Cross-fade joining for seamless multi-segment synthesis
+- LoRA Fine-Tuning - Fine-tune CSM-1B model on custom voice datasets (LJSpeech example included)
+- Lightweight Demo Runner - Easy-to-use Python CLI for quick synthesis
 
 ## Project Contents
 
 ### Notebooks
-- **`xtts_longform_pipeline.ipynb`** — Complete long-form TTS workflow using Coqui XTTS-v2 with text cleaning, two-segment fallback, and quality checks
-- **`Updated csm-1b.ipynb`** — LoRA fine-tuning of `unsloth/csm-1b` model on LJSpeech dataset and inference for ~5 minute audio composition
+- xtts_longform_pipeline.ipynb - Complete long-form TTS workflow using Coqui XTTS-v2 with text cleaning, two-segment fallback, and quality checks
+- Updated csm-1b.ipynb - LoRA fine-tuning of `unsloth/csm-1b` model on LJSpeech dataset and inference for ~5 minute audio composition
 
 ### Python Modules
-- **`xtts_pipeline.py`** — Reusable helper functions:
-  - `clean_text()` — Smart text normalization (quotes, punctuation, whitespace)
-  - `cross_fade_join()` — Seamless audio segment merging with fade effects
-  - `tts_single_shot()` — Single-pass long-form synthesis
-  - `tts_two_segment_fallback()` — Robust fallback for longer content
-- **`run_inference.py`** — Lightweight CLI demo runner
-- **`smoke_test.py`** — Quick validation tests (no heavy model dependencies)
+- xtts_pipeline.py — Reusable helper functions:
+- `clean_text()` — Smart text normalization (quotes, punctuation, whitespace)
+- `cross_fade_join()` — Seamless audio segment merging with fade effects
+- `tts_single_shot()` — Single-pass long-form synthesis
+- `tts_two_segment_fallback()` — Robust fallback for longer content
+- `run_inference.py` — Lightweight CLI demo runner
+- `smoke_test.py` — Quick validation tests (no heavy model dependencies)
 
 ### Assets
 - `reference.wav` — Example reference voice sample for voice cloning
@@ -39,19 +39,19 @@ A comprehensive text-to-speech (TTS) pipeline for generating high-quality, long-
 
 ### Setup (Windows PowerShell)
 
-1. **Clone the repository**
+1. Clone the repository
 ```powershell
 git clone https://github.com/yourusername/xtts-longform-pipeline.git
 cd xtts-longform-pipeline
 ```
 
-2. **Create and activate a virtual environment**
+2. Create and activate a virtual environment
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-3. **Install dependencies**
+3. Install dependencies
 ```powershell
 pip install --upgrade pip
 pip install -r requirements.txt
@@ -96,15 +96,15 @@ jupyter notebook
 
 ### Dependencies
 Core dependencies (from `requirements.txt`):
-- **PyTorch** (2.5.1) — Deep learning framework with CUDA support
-- **TTS** (0.22.x) — Coqui TTS library with XTTS-v2 models
-- **Transformers** (4.39+) — Hugging Face transformers for model inference
-- **Librosa** — Audio processing and analysis
-- **Soundfile** — Audio file I/O
+- PyTorch (2.5.1) - Deep learning framework with CUDA support
+- TTS (0.22.x) - Coqui TTS library with XTTS-v2 models
+- Transformers (4.39+) - Hugging Face transformers for model inference
+- Librosa - Audio processing and analysis
+- Soundfile - Audio file I/O
 
 ### Model Versions
-- **XTTS-v2** — Zero-shot multilingual TTS from Coqui
-- **CSM-1B** — Lightweight transformer-based TTS for fine-tuning
+- XTTS-v2 - Zero-shot multilingual TTS from Coqui
+- CSM-1B - Lightweight transformer-based TTS for fine-tuning
 
 ### Important Notes
 - Notebooks pin specific versions (e.g., `torch==2.5.1`) for reproducibility
@@ -113,9 +113,9 @@ Core dependencies (from `requirements.txt`):
 
 ## Performance & Quality
 
-- **Single-shot synthesis** handles most use cases efficiently
-- **Two-segment fallback** automatically engages for content exceeding single-model limits
-- **Cross-fade joining** ensures imperceptible audio transitions between segments
+- Single-shot synthesis handles most use cases efficiently
+- Two-segment fallback automatically engages for content exceeding single-model limits
+- Cross-fade joining ensures imperceptible audio transitions between segments
 - Typical latency: 10-30 seconds for 2-3 minutes of audio (GPU-dependent)
 
 ## Development
